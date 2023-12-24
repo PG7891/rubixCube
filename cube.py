@@ -3,13 +3,12 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
 colors = {
-    0: "pink",
-    1: "white",
-    2: "blue",
-    3: "orange",
-    4: "green",
-    5: "red",
-    6: "yellow"
+    0: "white",
+    1: "blue",
+    2: "orange",
+    3: "green",
+    4: "red",
+    5: "yellow"
 }
 
 faces = {
@@ -57,10 +56,30 @@ class cube:
         fillRect(.75, .25, 5)
 
         plt.show()
+    
+    def makeMove(self, index):
+        if index == 0:
+            #rotate face 3
+            return
+        elif index == self.size-1:
+            #rotate face 1
+            return
+        #in all cases make rotation at specified index
+
+    def turnCube(self, up):
+        print("here")
+        if up:
+            self.cube = np.array([self.cube[1], self.cube[5], self.cube[2], self.cube[0], self.cube[4], self.cube[3]])
+        else:
+            #turn left
+            self.cube = np.array([self.cube[2], self.cube[1], self.cube[5], self.cube[3], self.cube[0], self.cube[4]])
+        
 
 
 
     
         
 a = cube(3)
+a.drawCube()
+a.turnCube(True)
 a.drawCube()
